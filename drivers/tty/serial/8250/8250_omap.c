@@ -1024,7 +1024,7 @@ static int omap_8250_dma_handle_irq(struct uart_port *port)
 
 		dma_err = omap_8250_rx_dma(up, iir);
 		if (dma_err) {
-			status = serial8250_rx_chars(up, status);
+			status = serial8250_rx_chars(up, status, NULL);
 			omap_8250_rx_dma(up, 0);
 		}
 	}
